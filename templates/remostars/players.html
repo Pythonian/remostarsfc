@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Our Players | {% endblock %}
+
+{% block container %}
+  <div class="breadcrumb-sec " style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+    <div class="absolute-sec">  
+      <div class="container">
+        <div class="pageinfo page-title-align-left"><h1 style="color:#fff !important">Players</h1></div>
+      </div> 
+    </div>
+  </div>
+  <div class="clear"></div>
+  
+  <main id="main-content">
+    <div class="main-section">
+      <div class="container">
+        <div class="row">
+					<div class="page-content">
+            <section class="page-section">
+              <div class="container">
+                <div class="row">
+                  <div class="section-fullwidth">
+
+                    {% if goalkeepers %}
+                    <div class="element-size-100">
+                      <div class="main-title col-md-12">
+                        <div class="cs-section-title"><h2>Goalkeepers</h2></div>
+                      </div>
+                      {% for player in goalkeepers %}            
+                      <div class="col-md-4">
+                        <article class="cs-team">
+                          <figure><a href="{{ player.get_absolute_url }}"><img alt="{{ player.name }}" src="{{ player.image.url }}"></a></figure>
+                          <div class="text">
+                            <header>
+                              <span class="player-no">{{ player.squad_number }}</span>
+                              <h4><a href="{{ player.get_absolute_url }}">{{ player.name }}</a></h4>
+                              <h6>{{ player.position }}</h6>
+                            </header>
+                          </div>
+                        </article>
+                      </div>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {% if defenders %}
+                    <div class="element-size-100">
+                      <div class="main-title col-md-12">
+                        <div class="cs-section-title"><h2>Defenders</h2></div>
+                      </div>
+                      {% for player in defenders %}            
+                      <div class="col-md-4">
+                        <article class="cs-team">
+                          <figure><a href="{{ player.get_absolute_url }}"><img alt="{{ player.name }}" src="{{ player.image.url }}"></a></figure>
+                          <div class="text">
+                            <header>
+                              <span class="player-no">{{ player.squad_number }}</span>
+                              <h4><a href="{{ player.get_absolute_url }}">{{ player.name }}</a></h4>
+                              <h6>{{ player.position }}</h6>
+                            </header>
+                          </div>
+                        </article>
+                      </div>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {% if midfielders %}
+                    <div class="element-size-100">
+                      <div class="main-title col-md-12">
+                        <div class="cs-section-title"><h2>Midfielders</h2></div>
+                      </div>
+                      {% for player in midfielders %}            
+                      <div class="col-md-4">
+                        <article class="cs-team">
+                          <figure><a href="{{ player.get_absolute_url }}"><img alt="{{ player.name }}" src="{{ player.image.url }}"></a></figure>
+                          <div class="text">
+                            <header>
+                              <span class="player-no">{{ player.squad_number }}</span>
+                              <h4><a href="{{ player.get_absolute_url }}">{{ player.name }}</a></h4>
+                              <h6>{{ player.position }}</h6>
+                            </header>
+                          </div>
+                        </article>
+                      </div>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {% if strikers %}
+                    <div class="element-size-100">
+                      <div class="main-title col-md-12">
+                        <div class="cs-section-title"><h2>Strikers</h2></div>
+                      </div>
+                      {% for player in strikers %}            
+                      <div class="col-md-4">
+                        <article class="cs-team">
+                          <figure><a href="{{ player.get_absolute_url }}"><img alt="{{ player.name }}" src="{{ player.image.url }}"></a></figure>
+                          <div class="text">
+                            <header>
+                              <span class="player-no">{{ player.squad_number }}</span>
+                              <h4><a href="{{ player.get_absolute_url }}">{{ player.name }}</a></h4>
+                              <h6>{{ player.position }}</h6>
+                            </header>
+                          </div>
+                        </article>
+                      </div>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                  </div>                               
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {% include 'remostars/sidebar.html' %}
+        </div>
+      </div>  
+    </div>
+  </main>
+
+{% endblock %}

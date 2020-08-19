@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}{{ news.title }} | {% endblock %}
+
+{% block container %}
+  
+  <div class="breadcrumb-sec " style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+    <div class="absolute-sec">  
+      <div class="container">
+        <div class="pageinfo page-title-align-left">
+          <h1 style="color:#fff !important">{{ news.title }}</h1>
+          <span style="color:#fff !important">{{ news.excerpt|truncatechars:160 }}</span>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="clear"></div>
+
+  <!-- Main Content Section -->
+  <main id="main-content">
+    <div class="main-section">
+      <section class="page-section" style=" padding: 0; "> 
+        <div class="container"> 
+          <div class="row">
+            <div class="section-fullwidth">
+              <div class="page-content blog-editor"> 
+                <div class="col-md-12">
+                  <div class="post-option-panel">
+                    <ul class="post-option">
+                       <li><time>{{ news.created|date:"F j, Y" }}</time></li>
+                    </ul>
+                    <div class="cs-section-title">
+                      <h2 id="hidettl">{{ news.title }}</h2>
+                    </div>
+                    <div class="cs-seprator">
+                     <div class="devider1"></div>
+                    </div>
+                    <ul class="post-option">
+                       <li> <i class="fa fa-user"></i>By admin</li>
+                       {% if news.category %}
+                       <li> <i class="fa fa-folder-open"></i><a href="{{ news.category.get_absolute_url }}" rel="category">{{ news.category }}</a></li>
+                       {% endif %}
+                    </ul>
+                  </div>
+                <figure class="detailpost blog-editor"><img src="{{ news.image.url }}"></figure>          
+              </div>
+              <div class="col-md-12">
+                <div class="rich_editor_text blog-editor">{{ news.body|safe }}</div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="detail-post">
+                  <h5>Share Story</h5>
+                  <div class="socialmedia">
+                    <ul>
+                      <li><a data-original-title="Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"><i class="fa fa-facebook"></i></a></li>
+                      <li><a data-original-title="twitter" target="_blank" href="http://twitter.com/share?url={{ request.build_absolute_uri }}&amp;text={{ news.title }}"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                  </div>                
+                </div>
+              </div>
+
+              {% if news.get_previous_by_created or news.get_next_by_created %}
+                <div class="col-md-12">
+                  <div class="prev-next-post"> 
+                    {% if news.get_previous_by_created %}           
+                    <article class="prev">
+                      <div class="text">
+                          <h2><a href="{{ news.get_previous_post.get_absolute_url }}">{{ news.get_previous_post }}</a> </h2>
+                          <a class="left-arrow" href="{{ news.get_previous_post.get_absolute_url }}"><i class="fa fa-angle-left"></i> </a>
+                      </div>
+                    </article>
+                    {% endif %}
+                    {% if news.get_next_by_created %}
+                    <article class="next">
+                      <div class="text">
+                        <h2><a href="{{ news.get_next_post.get_absolute_url }}">{{ news.get_next_post }}</a> </h2>
+                          <a class="right-arrow" href="{{ news.get_next_post.get_absolute_url }}"><i class="fa fa-angle-right"></i></a>
+                      </div>
+                    </article>
+                    {% endif %}
+                  </div>          
+                </div>
+              {% endif %}
+
+        		  <div class="col-md-12">
+              	<div id="cs-comments">
+                  <div class="cs-section-title"><h2>Comments</h2></div>
+                  <div class="fb-comments" data-width="100%" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
+                </div>
+              </div>
+            </div>
+          	
+            {% include 'remostars/sidebar.html' %}
+            
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+{% endblock %}

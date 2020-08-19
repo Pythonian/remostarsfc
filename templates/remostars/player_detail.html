@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}{{ player.name }} | {% endblock %}
+
+{% block container %}
+    <div class="breadcrumb-sec " style="background: url('/static/remostars/img/bg.jpg') center top  ; min-height:256px!important; padding-top:112px   "> 
+        <div class="absolute-sec">  
+            <div class="container">
+                <div class="pageinfo page-title-align-left"><h1 style="color:#fff !important">{{ player.name }}</h1></div>
+            </div> 
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <main id="main-content">
+        <div class="main-section">
+            <section class="page-section" style="padding:0;"> 
+                <div class="container"> 
+                    <div class="row">
+      
+                        <div class="page-content player-editor"> 
+                            <div class="team-detail col-md-12">
+                                <figure class="detailpost">
+                                    <img src="{{ player.image.url }}" alt="{{ player.name }}"> 
+                                    <figcaption>
+                                        <div class="contant-info cs-team">
+                                            <header>
+                                                <h1 style="font-size:36px !important; line-height:36px !important; text-transform: uppercase !important; color:#fff !important;">{{ player.name }}</h1>
+                                                <span class="player-no">{{ player.squad_number }}</span>
+                                            </header>
+                                            <div class="cs-seprator"><div class="devider1"></div></div>
+                                            <div class="player-info">
+                                                <ul class="left-side">
+                                                    <li>POSITION</li>
+                                                    {% if player.club_appearances %}<li>APPEARANCES</li>{% endif %}
+                                                    {% if player.goals %}<li>GOALs</li>{% endif %}
+                                                    {% if player.yellow_cards %}<li>YELLOW CARDS</li>{% endif %}
+                                                    {% if player.red_cards %}<li>RED CARDS</li>{% endif %}
+                                                    {% if player.date_of_birth %}<li>D.O.B</li>{% endif %}
+                                                    {% if player.nationality %}<li>NATIONALITY</li>{% endif %}
+                                                    {% if player.height %}<li>HEIGHT</li>{% endif %}
+                                                    {% if player.weight %}<li>WEIGHT</li>{% endif %}
+                                                    {% if player.previous_clubs %}<li>PREVIOUS CLUBS</li>{% endif %}
+                                                </ul>
+                                                <ul class="right-side">
+                                                    <li>{{ player.position }}</li>
+                                                    {% if player.club_appearances %}<li>{{ player.club_appearances }}</li>{% endif %}
+                                                    {% if player.goals %}<li>{{ player.goals }}</li>{% endif %}
+                                                    {% if player.yellow_cards %}<li>{{ player.yellow_cards }}</li>{% endif %}
+                                                    {% if player.red_cards %}<li>{{ player.red_cards }}</li>{% endif %}
+                                                    {% if player.date_of_birth %}<li>{{ player.date_of_birth }}</li>{% endif %}
+                                                    {% if player.nationality %}<li>{{ player.nationality }}</li>{% endif %}
+                                                    {% if player.height %}<li>{{ player.height }}</li>{% endif %}
+                                                    {% if player.weight %}<li>{{ player.weight }}</li>{% endif %}
+                                                    {% if player.previous_clubs %}<li>{{ player.previous_clubs }}</li>{% endif %}
+                                                </ul>                    
+                                            </div>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                          
+                            <div class="col-md-12">
+                                <div class="rich_editor_text blog-editor">
+                             	{{ player.biography|safe }}
+                                </div>
+                            </div>
+                              
+                    		<!-- <div class="col-md-12">
+                                <div class="detail-post">
+                                    <h5>Share Player Profile</h5>
+                                    <div class="socialmedia">
+                                        <ul>
+                                            <li><a class="addthis_button_facebook" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a class="addthis_button_twitter" data-original-title="twitter"><i class="fa fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>               
+                               </div>
+                            </div>  -->         
+                                    
+                            <!-- <div class="col-md-12">
+                                <div class="prev-next-post">            
+                                    <article class="prev">
+                                        <div class="text">
+                                            <h2><a href="">Accusam Jim</a> </h2>
+                                            <a class="left-arrow" href=""><i class="fa fa-angle-left"></i> </a>
+                                        </div>
+                                    </article>
+                                    <article class="next">
+                                        <div class="text">
+                                            <h2><a href="">Jakson</a> </h2>
+                                            <a class="right-arrow" href=""><i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>          
+
+                            <div class="col-md-12 post-recent">
+                              	<div class="cs-section-title">
+                                	<h2>Related Post</h2>
+                                </div>
+                               
+                            </div> -->
+                        </div>
+                        {% include 'remostars/sidebar.html' %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+{% endblock %}

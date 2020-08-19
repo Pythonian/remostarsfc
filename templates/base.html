@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+{% load static %}
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}{% endblock %} Official website of Remo Stars Football Club</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="google-site-verification" content="EDcXeMxGnGfc1cEl4RQyLVbgusUTDljnCRYzEFg5e3M" />
+<link rel="shortcut icon" href="">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Asap:regular" type="text/css"/>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Asap:regular" type="text/css"/>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Asap:700" type="text/css"/>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Asap:regular" type="text/css"/>
+
+<link rel='stylesheet' href="{% static 'remostars/css/inline.css' %}"  type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/settings.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/bootstrap.css' %}"  type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/themetypo.css' %}"  type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/style.css' %}"  type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/bootstrap-theme.css' %}"  type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/widget.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/flexslider.css' %}" type='text/css' media='all'/>
+<!-- <link rel='stylesheet' href="{% static 'remostars/css/mediaelementplayer.min.css' %}" type='text/css' media='all'/> -->
+<!-- <link rel='stylesheet' href="{% static 'remostars/css/prettyphoto.css' %}" type='text/css' media='all'/> -->
+<link rel='stylesheet' href="{% static 'remostars/css/woocommerce.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/responsive.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/color.css' %}"  type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'remostars/css/responsive2.css' %}"  type='text/css' media='all'/>
+<!-- <link rel="stylesheet" href="{% static 'remostars/css/magnific-popup.css' %}"> -->
+
+<script type='text/javascript' src="{% static 'remostars/js/jquery.js' %}"></script>
+<script type='text/javascript' src="{% static 'remostars/js/jquery-migrate.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'remostars/js/jquery.themepunch.tools.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'remostars/js/jquery.themepunch.revolution.min.js' %}"></script>
+<!-- <script type='text/javascript' src="{% static 'remostars/js/magnific-popup.js' %}"></script> -->
+<style type="text/css">
+  .logo-section, .main-head
+{
+    background: #000059 !important;
+}
+.top-bar, #lang_sel ul ul {
+    background-color: #000059;
+}
+.main-navbar {
+    background: #000059 !important;
+}
+.logo-section .left-side p {
+    color: #f1b900 !important;
+}
+</style>
+
+</head>
+<body class="home page page-template-default {% block body_class %}{% endblock %}">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <div class="wrapper header-absolute wrapper_full_width">
+    <header id="main-header" class="header">
+
+      <section class="top-bar">
+        <div class="container">
+          <aside class="left-side">
+            <p><i class="fa fa-envelope"></i><a href="mailto:info@remostarsfc.com">info@remostarsfc.com</a></p>
+            <p><i class="fa fa-phone"></i>+234-8166110429</p>
+          </aside>
+          <!-- <aside class="right-side">
+            <div class="cart-sec">
+              <a href=""><i class="fa fa-shopping-cart"></i>Cart <span class="qnt">0</span> </a>
+            </div>
+          </aside>  -->
+        </div>
+      </section>
+
+		  <section class="logo-section">
+        <div class="container">
+          <aside class="left-side">
+            <div class="logo">
+              <a href="{% url 'home' %}"><img src="{% static 'remostars/img/logo.png' %}" alt="Remo Stars Football Club"></a>
+	          </div>
+            <p style="font-size: 24px; font-weight: bolder;">Official Website of Remo Stars Football Club</p>
+          </aside>
+
+          <!-- <aside class="right-side">
+            <div class="search-top cs-searchv2">
+              <form id="searchform" method="get" action="" role="search">
+                <input type="text" name="s" id="searchinput" value="Enter your search" onblur="if(this.value == '') { this.value ='Enter your search'; }" onfocus="if(this.value =='Enter your search') { this.value = ''; }">
+                <input type="submit" value="" name="submit">
+              </form>
+            </div>
+
+          </aside> -->
+        </div>
+      </section>
+
+      <section class="main-navbar">
+        <div class="container">
+          <nav class="navigation">
+            <ul class="nav navbar-nav">
+              <li class="menu-item dropdown current-menu-item">
+                <a href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="menu-item dropdown current-menu-item">
+                <a href="{% url 'news' %}">News</a>
+              </li>
+              <li class="menu-item dropdown sub-menu menu-item-type-custom dropdown sub-menu menu-item-object-custom dropdown sub-menu menu-item-has-children">
+                <a href="javascript:void(0)">Match Center</a>
+                <ul class="sub-dropdown">
+                  <li class="menu-item"><a href="{% url 'fixtures' %}">Fixtures</a></li>
+                  <li class="menu-item"><a href="{% url 'results' %}">Results</a></li>
+                  <li class="menu-item"><a href="{% url 'statistics' %}">Statistics</a></li>
+                  <!--<li class="menu-item"><a href="{% url 'table' %}">League Table</a></li>-->
+                </ul> <!--End Sub Menu -->
+              </li>
+              <li class="menu-item dropdown sub-menu menu-item-type-custom dropdown sub-menu menu-item-object-custom dropdown sub-menu menu-item-has-children">
+                <a href="javascript:void(0)">Team</a>
+                <ul class="sub-dropdown">
+                  <li class="menu-item"><a href="{% url 'players' %}">Players</a></li>
+                  <li class="menu-item"><a href="{% url 'officials' %}">Club Officials</a></li>
+                </ul> <!--End Sub Menu -->
+              </li>
+              <li class="menu-item dropdown current-menu-item">
+                <a href="{% url 'history' %}">Club History</a>
+              </li>
+              <li class="menu-item dropdown sub-menu menu-item-type-custom dropdown sub-menu menu-item-object-custom dropdown sub-menu menu-item-has-children">
+                <a href="javascript:void(0)">Media Center</a>
+                <ul class="sub-dropdown">
+                  <li class="menu-item"><a href="{% url 'gallery' %}">Gallery</a></li>
+                  <li class="menu-item"><a href="{% url 'videos' %}">Videos</a></li>
+                </ul> <!--End Sub Menu -->
+              </li>
+              <li class="menu-item dropdown current-menu-item">
+                <a href="{% url 'contact' %}">Contact</a>
+              </li>
+              <!-- <li class="menu-item dropdown current-menu-item">
+                <a href="{# url 'shop' #}">Shop</a>
+              </li> -->
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </header>
+
+		<script type="text/javascript">jQuery(document).ready(function(){jQuery('.main-navbar').scrollToFixed();});</script>
+		<div class="clear"></div>
+
+    {% block container %}
+    {% endblock %}
+
+    <div class="clear"></div>
+
+		<!-- Bottom Section -->
+    <section id="copyright">
+      <div class="container">
+        <div class="row">
+        	<div class="col-md-12">
+          	<div class="footer_icon">
+              <a href="{% url 'home' %}"><img src="{% static 'remostars/img/logo.png' %}" alt="Remo Stars Football Club"></a>
+            </div>
+            <div class="social-media">
+              <ul class="socialmedia">
+                <li>
+                  <a href="https://facebook.com/RemoStarsFc" data-original-title="Facebook" data-placement="top" class="colrhover" target="_blank"><i style="color:#cccccc;" class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/RemoStarsfc" data-original-title="Twitter" data-placement="top" class="colrhover" target="_blank"><i style="color:#cccccc;" class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="https://youtube.com/user/RemoStars1" data-original-title="Youtube" data-placement="top" class="colrhover" target="_blank"><i style="color:#cccccc;" class="fa fa-youtube"></i></a>
+                </li>
+                <li>
+                  <a href="https://instagram.com/RemoStars" data-original-title="Instagram" data-placement="top" class="colrhover" target="_blank"><i style="color:#cccccc;" class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+            <p>&copy;{% now "Y" %} Remo Stars Football Club &bull; All rights reserved. Developed by <a href="https://twitter.com/Ajibel" target="_blank">Seyi Pythonian</a></p>
+          </div>
+ 	 	    </div>
+      </div>
+    </section>
+
+  </div>
+    <!-- Wrapper End -->
+
+<script>eval(mod_pagespeed_Lf03kbQEB_);</script>
+<script>eval(mod_pagespeed_oBBzZj6GMk);</script>
+<script>eval(mod_pagespeed_1Xplb1jymQ);</script>
+<script src="http://goalklub.chimpgroup.com/wp-content/themes/goalklub-theme/assets/scripts/slick.js,qver==4.6.1+responsive.menu.js,qver==4.6.1.pagespeed.jc.OPz8JKLr01.js"></script>
+<script>eval(mod_pagespeed_IKPOI2bYJc);</script>
+<script>eval(mod_pagespeed_5z8dVvgh9B);</script>
+<script src="http://goalklub.chimpgroup.com/wp-content,_themes,_goalklub-theme,_assets,_scripts,_functions.js,qver==4.6.1+wp-includes,_js,_wp-embed.min.js,qver==4.6.1.pagespeed.jc.vRl-xYyvbb.js"></script>
+<script>eval(mod_pagespeed_hdXn3IUzxV);</script>
+<script>eval(mod_pagespeed_MRcHh9bZxf);</script>
+<script src="http://goalklub.chimpgroup.com/wp-content/plugins,_sitepress-multilingual-cms,_res,_js,_sitepress.js,qver==4.6.1+themes,_goalklub-theme,_assets,_scripts,_sticky_header.js,qver==4.6.1+themes,_goalklub-theme,_assets,_scripts,_news-ticker.js,qver==4.6.1+themes,_goalklub-theme,_assets,_scripts,_owl.carousel.min.js,qver==4.6.1.pagespeed.jc.jKVEKu63TX.js"></script>
+<script>eval(mod_pagespeed_vWD9uYwLb0);</script>
+<script>eval(mod_pagespeed_of11r4RgkT);</script>
+<script>eval(mod_pagespeed_cgwABRxh2L);</script>
+<script>eval(mod_pagespeed_YUT3E7uVyA);</script>
+<script type='text/javascript' src="http://goalklub.chimpgroup.com/wp-content/themes/goalklub-theme/assets/scripts/jquery.flexslider.js?ver=4.6.1"></script>
+</body>
+</html><!-- Columns End -->

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Match Results | {% endblock %}
+
+{% block container %}
+  
+<div class="breadcrumb-sec " style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+  <div class="absolute-sec">  
+    <div class="container">
+      <div class="pageinfo page-title-align-left">
+        <h1 style="color:#fff !important">Match Results</h1>
+      </div>
+    </div> 
+  </div>
+</div>
+<div class="clear"></div>
+
+<main id="main-content">
+  <div class="main-section">
+    <div class="container">
+      <div class="row">						
+        
+				<div class="page-content">
+          <section class="page-section">
+            <div class="container">
+              <div class="row">
+                <div class="section-fullwidth">
+                  <div class="element-size-100">
+                    <div class="col-md-12 ">  
+                    {% for result in results %}         
+                      <div>
+                        <div class="featured-event" style="background:url('/static/remostars/img/bg.jpg') no-repeat">
+                          <div class="cs-sc-team">
+                            <ul>
+                              <li>
+                                <figure>
+                                  <figcaption><a href="">{{ result.home_team }}</a></figcaption>
+                                </figure>
+                              </li>
+                              <li>
+                                <div class="match-score">
+                                  <strong>{{ result.home_team_score }}<small>:</small>{{ result.away_team_score }}</strong>
+                                </div>
+                              </li>
+                              <li class="right-side">
+                                <figure>
+                                  <figcaption><a href="">{{ result.away_team }}</a></figcaption>
+                                </figure>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="bottom-event-panel">
+                            <ul class="post-option">
+                              <li><i class="fa fa-soccer-o"></i> {{ result.match_type }}</li>
+                              <li><i class="fa fa-calendar"></i> {{ result.match_date|date:"F j, Y" }}</li>
+                              <li><i class="fa fa-map-marker"></i> {{ result.venue }}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                     {% empty %}<p>There are currently no Result.</p> 
+                    {% endfor %}
+                    </div>
+
+                    {% if results.has_previous or results.has_next %}
+                    <div class='col-md-12'>
+                      <nav class='pagination'>
+                        <ul>
+                          {% if results.has_previous %}
+                          <li class='pgprev'><a class='icon' href='?page={{ results.previous_page_number}}'>Previous Page</a></li>
+                          {% endif %}
+                          {% if results.has_next %}
+                          <li class='pgnext'><a class='icon' href='?page={{ results.next_page_number}}'>Next Page</a></li>
+                          {% endif %}
+                        </ul>
+                      </nav>
+                    </div>
+                    {% endif %}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {% include 'remostars/sidebar.html' %}
+
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

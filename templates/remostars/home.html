@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+{% block title %}Home | {% endblock %}
+{% load static %}
+{% load humanize %}
+{% load remostars_tags %}
+{% block container %}
+<!-- rev slider -->
+	<style scoped>ul#news-ticker li a,.ticker-wrapp h5,.ticker-controls li a{color:#000!important}</style>
+	{% get_latest_news as news_list %}
+	{% if news_list %}
+    <section class="page-section hidden-xs">
+        <div class="announcement-ticker">
+            <div class="container">
+                <div class="row">
+                    <div class="section-fullwidth">
+                        <div class="element-size-100">
+                            <div class="col-md-12">
+                                <div class="ticker-wrapp">
+                                    <h5><i class="fa fa-newspaper-o"></i>Latest News :</h5>
+                                    <ul id="news-ticker" class="news-ticker">
+            						<script>jQuery(document).ready(function(){fn_jsnewsticker("news-ticker",10,80);});</script>          						
+	                        		{% for news in news_list %} 
+            							<li>
+                                            <a href="{{ news.get_absolute_url }}"><span>{{ news.created|date:"M j, Y" }}</span> - {{ news.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    
+    <main id="main-content">
+        <div class="main-section"> 
+            <section class="page-section" style="margin-top: -30px;padding-top: 30px;padding-bottom: 40px;margin-bottom: 0px;border-top: 0px #e0e0e0 solid;border-bottom: 0px #e0e0e0 solid;background: url('/static/remostars/img/home-bg.jpg')  #282828;">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-fullwidth">
+	                        <div class="element-size-100">
+	                        	{% get_latest_news as news_list %}
+	                        	{% for news in news_list %}          
+	                        	<div class="col-md-4">
+					                <article class="cs-blog blog-grid">
+					                    <figure>
+					                        <a href="{{ news.get_absolute_url }}"><img alt="{{ news.caption|default:news.title }}" src="{{ news.image.url }}"></a>
+					                    </figure>
+					                    <div class="text">
+					                        <h2>
+					                            <a href="{{ news.get_absolute_url }}" title="{{ news.title }}">{{ news.title|truncatewords:8 }}<i class="fa fa-arrow-right"></i></a>
+					                        </h2>
+					                    </div>
+					                </article>
+	            				</div>
+	            				{% endfor %}
+	                        </div>
+
+	                        
+	                        <div class="element-size-67">
+	                        	<div class="col-md-12 ">
+	                        		<div class="cs-section-title"><h2>LAST MATCH</h2></div>
+	                        		{% if last_match %}         
+	                        		<div class="post-670">
+	             						<div class="featured-event" style=" background:url('/static/remostars/img/bg.jpg') no-repeat; ">
+	                             			<div class="cs-sc-team">
+							                    <ul>
+							                        <li>
+							                            <figure>
+	                                                        <figcaption><a href="javascript:void(0)">{{ last_match.home_team }}</a></figcaption>
+	                                                    </figure>
+	                        						</li>
+							                        <li>
+							                            <div class="match-score">
+							                                <strong>{{ last_match.home_team_score }}<small>:</small>{{ last_match.away_team_score }}</strong>
+														</div>
+							                        </li>
+							                        <li class="right-side">
+							                        	<figure>
+	                                                        <figcaption><a href="javascript:void(0)">{{ last_match.away_team }}</a></figcaption>
+	                                                    </figure>
+							                        </li>
+							                    </ul>
+							                </div>
+							                <div class="bottom-event-panel">
+							                    <ul class="post-option">
+							                        <li><i class="fa fa-futbol-o"></i> {{ last_match.match_type }}</li>
+							                        <li><i class="fa fa-calendar"></i> {{ last_match.match_date }}</li>
+							                        <li><i class="fa fa-map-marker"></i>{{ last_match.venue }}</li>
+							                    </ul>
+							                </div>
+							            </div>
+							        </div>
+							        {% else %}There are currently no Match Result.
+							        {% endif %}
+								</div>
+							</div>
+							
+	
+							<div class="element-size-33">
+								<div class="col-md-12">
+									<div class="cs-section-title"><h2>FACEBOOK</h2></div> 
+									<div class="fb-page" data-href="https://www.facebook.com/RemoStarsFc" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RemoStarsFc" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RemoStarsFc">Remo Stars FC</a></blockquote></div>
+								</div>
+							</div>
+
+							
+	                        <div class="element-size-67">
+	                        	<div class="col-md-12 ">
+	                        		<div class="cs-section-title"><h2>NEXT MATCH</h2></div>
+	                        		{% if next_match %}            
+	                        		<div class="featured-event event-editor hello 3" style="background:url('/static/remostars/img/bg.jpg')no-repeat;">
+                         
+										<div class="cs-sc-team">
+											<ul>
+												<li>
+													<figure>
+													<figcaption><a href="javascript:void(0)">{{ next_match.home_team }}</a></figcaption>
+													</figure>
+												</li>
+												<li>
+													<div class="match-score">
+													<small>VS</small>
+													</div>
+												</li>
+												<li class="right-side">
+													<figure>
+													<figcaption><a href="javascript:void(0)">{{ next_match.away_team }}</a></figcaption>
+													</figure>
+												</li>
+											</ul>
+										</div>
+										<div class="bottom-event-panel">
+											<ul class="post-option text-right">
+												<li><i class="fa fa-soccer-o"></i> {{ next_match.match_type }}</li>
+												<li><i class="fa fa-calendar"></i> {{ next_match.match_date|date:"F j, Y" }} {{ next_match.match_time|time:"P" }}</li>
+												<li><i class="fa fa-map-marker"></i>{{ next_match.venue }}</li>
+											</ul>
+										</div>
+									</div>
+									{% else %}There is no Upcoming Match.
+									{% endif %}
+								</div>
+							</div>							
+							
+							<div class="element-size-33">
+								<div class="col-md-12 ">
+									<div class="cs-section-title"><h2>TWITTER</h2></div>
+									<a class="twitter-timeline" data-height="200" data-theme="dark" data-link-color="#E81C4F" href="https://twitter.com/RemoStarsFC">Tweets by RemoStarsFC</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+							    </div>
+							</div>
+
+						</div>                               
+					</div>
+				</div>
+			</section>
+		                               
+	        <section class="page-section" style="margin-top: 0px;padding-top: 60px;margin-bottom: 0px;border-top: 0px #e0e0e0 solid;border-bottom: 0px #e0e0e0 solid;background: url('/static/remostars/img/home-bg.jpg')  #282828;">
+	            <div class="container">
+	                <div class="row">
+	                    <div class="section-fullwidth">
+	                    	<div class="element-size-100">
+	                    		<div class="main-title col-md-12">
+	                    			<div class="cs-section-title"><h2>OUR PLAYERS</h2></div>
+	                    		</div>
+	                    		<div class="col-md-12">
+	                    		{% get_players as players %}
+	                    		{% for player in players %}
+		                    		<div class="col-md-3">
+				                        <article class="cs-team">
+				                          <figure><a href="{{ player.get_absolute_url }}"><img alt="{{ player.name }}" src="{{ player.image.url }}"></a></figure>
+				                          <div class="text">
+				                            <header>
+				                              <span class="player-no">{{ player.squad_number }}</span>
+				                              <h4><a href="{{ player.get_absolute_url }}">{{ player.name }}</a></h4>
+				                              <h6>{{ player.position }}</h6>
+				                            </header>
+				                          </div>
+				                        </article>
+		                      		</div>
+		                      	{% empty %}No registered players yet.
+		                      	{% endfor %}
+	            				</div> 
+	            			</div>
+	            		</div>
+	            	</div>
+	            </div>
+	        </section>
+
+	        <!-- <section class="page-section" style="margin-top: 0px;padding-top: 60px;padding-bottom: 60px;margin-bottom: 60px;border-top: 0px #e0e0e0 solid;border-bottom: 0px #e0e0e0 solid;background: url(http://goalklub.chimpgroup.com/wp-content/uploads/home-store-goalklub.jpg);">
+	          	<div class="container">
+	            	<div class="row">
+	              		<div class="section-fullwidth">
+	                		<div class="element-size-100">
+	                    		<h1 style="color:#ffffff !important; font-size: 28px !important; text-align: center; font-style:normal;">CLUB STORE</h1>
+			                    <div class="box_spreater">
+			                      	<div class="spreater">
+			                        	<div class="spreater-holder">
+			                          	<span></span>
+			                        	</div>
+			                     	</div>
+			                    </div>
+			                </div>
+			                <div class="element-size-100">
+			                  	<div class="col-md-12" style="height:5px"></div>
+			                </div>
+			                <div class="element-size-100">
+			                  	<div class="col-md-12"> 
+				                    <div class="woocommerce columns-4">			
+				                		<ul class="products">
+				                		{% for product in products %}
+				                        	<li class="product">
+												<a href="{{ product.get_absolute_url }}" class="woocommerce-LoopProduct-link">
+													<img width="266" height="300" src="{{ product.image.url }}" alt="{{ product.name }}" />
+													<h3>{{ product.name }}</h3>
+													<span class="price">
+														<span class="woocommerce-Price-amount amount">&#8358;{{ product.price|intcomma }}</span>
+													</span>
+												</a>
+												<a rel="nofollow" href="javascript:void(0)" data-quantity="1" data-product_id="73" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a>
+											</li>	
+										{% endfor %}	
+				                		</ul>
+				                    </div>     
+			                  	</div>
+			                </div>
+		              	</div>
+		            </div>
+		        </div>
+		    </section> -->
+
+        <section class="page-section"  style="margin-top: 0px;padding-top: 60px;margin-bottom: 0px;border-top: 0px #e0e0e0 solid;border-bottom: 0px #e0e0e0 solid;background: url(http://goalklub.chimpgroup.com/wp-content/uploads/home-features-Bg.jpg)  #282828;">
+          	<div class="container">
+	            <div class="row">
+	              	<div class="section-fullwidth">
+	              		<div class="element-size-100">
+	              			<div class="col-md-12">
+	              				<div class="cs-section-title">
+	              					<h2>OUR SPONSORS</h2>
+	              				</div>
+	              				<div class="cs-partner no-clients-border">
+	              					<ul class="row">
+	              					{% for sponsor in sponsors %}
+	              						<li class="col-md-2">
+	              							<figure><img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}"></figure>
+	              						</li>
+	              					{% empty %}We've got no sponsor. You can be our first.
+	              					{% endfor %}
+	              					</ul>
+	              				</div>
+	              			</div>
+	              		</div>
+	              	</div>                               
+	            </div>
+          	</div>
+        </section>
+
+      </div>
+    </main>
+
+{% endblock %}

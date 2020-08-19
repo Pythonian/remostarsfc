@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Club History | {% endblock %}
+{% load static %}
+
+{% block container %}
+  
+  <div class="breadcrumb-sec " style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+    <div class="absolute-sec">  
+      <div class="container">
+        <div class="pageinfo page-title-align-left">
+          <h1 style="color:#fff !important">Club History</h1>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="clear"></div>
+  
+  <main id="main-content">
+    <div class="main-section">
+      <section class="page-section" style="margin-top: 0px;padding-bottom: 30px;margin-bottom: 0px;border-top: 0px #e0e0e0 solid;border-bottom: 0px #e0e0e0 solid;">
+        <div class="container">
+          <div class="row">
+            <div class="section-fullwidth">
+              <div class="element-size-100" style="margin-bottom: 50px">
+                <div class="main-history">
+                  <div class="cs-section-title"><h2>About Us</h2></div>
+                  {{ about.content|safe }}
+                </div>
+              </div>
+              <div class="element-size-100">
+                <div class="main-history">
+                  <div class="cs-section-title"><h2>Club Honours</h2></div>
+                  <div class="history-grid ">
+                    <div class="row">
+                      {% for honor in honors %}
+                      <article class="history-info col-md-4">
+                        <div class="inner-sec">
+                          <span>{{ honor.year }}</span>
+                          <img src="{% static 'remostars/img/logo.png' %}" alt="{{ honor.achievement }}">
+                          <h4>{{ honor.achievement }}</h4>
+                        </div>
+                      </article>
+                      {% empty %}We are yet to achieve any honour.
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>    
+  </main>
+
+{% endblock %}

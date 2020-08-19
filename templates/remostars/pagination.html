@@ -1,0 +1,16 @@
+{% if news_list.has_previous or news_list.has_next %}
+
+<div class='col-md-12'>
+  <nav class='pagination'>
+    <ul>
+    	{% if news_list.has_previous %}
+    	<li class='pgprev'><a class='icon' href='?page={{ news_list.previous_page_number}}'>Previous Page</a></li>
+    	{% endif %}
+      	{% if news_list.has_next %}
+      	<li class='pgnext'><a class='icon' href='?page={{ news_list.next_page_number}}'>Next Page</a></li>
+      	{% endif %}
+    </ul>
+  </nav>
+</div>
+
+{% endif %}

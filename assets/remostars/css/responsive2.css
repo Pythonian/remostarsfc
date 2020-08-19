@@ -1,0 +1,159 @@
+
+/*============	Media 768Px Start ============ */ 
+@media (min-width: 768px) and (max-width: 990px) {
+	/* Header */
+	
+	.main-navbar {padding: 20px 0;}
+	.header .logo-section .left-side { text-align:center; float:none;}
+	.header .main-navbar .navigation .cs-click-menu { display:block;}
+	li.parentIcon a:after, .cs-user, .cs-user-login { width:100%; border: none;}
+	.header  .navbar-nav {display: none; margin: 0;  background-color: #1b1b1b; padding: 5px 30px 0; width: 400px; position: absolute; z-index: 99;}
+	.wrapper .header .main-navbar .navigation .cs-click-menu{ display:block;}
+	.wrapper .header .main-navbar .navigation ul li{ width:100%}
+	.wrapper .header .main-navbar .navigation .navbar-nav > li > a { width:100%; border-bottom: 1px solid rgba(0, 0, 0, 0.8); border-left: none; padding: 10px 15px;}
+	.wrapper .header .main-navbar .navigation .navbar-nav li:last-child a {border-bottom: none;}
+	.header .navigation ul li:last-child a {border-right: none;}
+	.header .navbar-nav .sub-dropdown {display: none; visibility: visible; opacity: 1; position: static; float: left; width: 100%; -webkit-transform: translateX(0px); -moz-transform: translateX(0px); -ms-transform: translateX(0px); -o-transform: translateX(0px); transform: translateX(0px); padding-bottom: 0;}
+
+	.wrapper #copyright {padding: 30px 12px 10px 0;}
+	.event.event-listing-v2 article.event-fixtures .text {width: 65%;}
+	.event.event-results article .text {width: 65%;}
+	.main-section .banner .banner-inn .cs-rating  {width: 100%;}
+	.main-section .banner .banner-inn .cs-rating ul  {width: 49.2%; margin: 0 5px 0 0;}
+	.main-section .banner .banner-inn .cs-rating ul li {width: 95px;}
+	.main-section .banner .banner-inn .banner-top {width: 100%; float: left;}
+	.main-section .event.event-listing-v2 .match-result {float: none; display: inline-block; border:none; padding:0;}
+	.col-md-4 {width: 50%;} .col-md-2 {width: 33.33%;} 
+	.wrapper .main-section .featured-event .cs-rating {padding: 0 30px;}
+	.wrapper .main-section .featured-event .cs-rating ul {margin: 0 5px 45px 0; width: 100%;}
+	.wrapper .main-section .cs-rating:before {top: 3px; bottom: auto; left: 17px;}
+	.wrapper .main-section .cs-rating:after {bottom: 40px; top: auto; right: 17px;}
+}
+
+/*============ Media 420Px Start ============ */
+@media (max-width: 767px) {
+	.top-bar {text-align: center;}
+	.top-bar .left-side, .top-bar .right-side {float: none; display: inline-block;}
+	.main-navbar {padding: 20px 0;}
+	.header .logo-section {padding: 15px 0 20px;}
+	.header  .navbar-nav {display: none; margin: 0;  background-color: #1b1b1b; width: 400px; padding: 5px 30px 0; position: absolute; z-index: 99;}
+	.wrapper .header .main-navbar .navigation .cs-click-menu{ display:block;}
+	.wrapper .header .main-navbar .navigation ul li{ width:100%}
+	.wrapper .header .main-navbar .navigation .navbar-nav > li > a { width:100%; border-bottom: 1px solid rgba(0, 0, 0, 0.8); border-left: none; padding: 10px 15px;}
+	.header .navigation ul li:last-child a {border-right: none;}
+	.header .navbar-nav .sub-dropdown {display: none; visibility: visible; opacity: 1; position: static; float: left; width: 100%; -webkit-transform: translateX(0px); -moz-transform: translateX(0px); -ms-transform: translateX(0px); -o-transform: translateX(0px); transform: translateX(0px); padding-bottom: 0;}
+	.header .navigation ul > li:hover > a {background-color: inherit;}
+	.main-navbar.scroll-to-fixed-fixed { position: static !important; }
+	
+	/* Home Style */
+	.main-section .element-size-67 .featured-event .cs-sc-team, .main-section .featured-event .cs-sc-team {padding: 0 15px;}
+	.main-section .cs-sc-team ul li figure {text-align: center;}
+	.main-section .featured-event .cs-sc-team img, .cs-sc-team ul li.right-side figure img {float: none; display: inline-block;}
+	.main-section .featured-event .cs-sc-team img {float: left;}
+	.main-section .cs-sc-team ul li.right-side figure img {float: right;}
+	.main-section .featured-event.small-featured .cs-sc-team ul li figure img, .main-section .featured-event.small-featured .cs-sc-team ul li.right-side figure img {float: none; display: inline-block;}
+	.main-section .featured-event.small-featured .cs-sc-team ul li figure figcaption {margin: -10px 0 0;}
+	/* Home Style */
+	.event article.event-fixtures .text {width: 60%;}
+	.event .event-fixtures .calendar-date, .event .event-fixtures .match-result {width: 20%;}
+	.wrapper #copyright {padding: 30px 2px 10px;}
+	.wrapper .banner-top {width: 100%; left: left;}
+	.page-section .section-fullwidth .event article .text h2 {margin-left: 0;}
+	.main-section .event-listing-v2 .post-option li:first-child {margin: 0;}
+	.event.event-listing-v2 article.event-fixtures .text {width: 100%;}
+	.event.event-results article.event-fixtures .post-option li {width: 100%;}
+	.main-section .banner .banner-inn .cs-rating ul {margin: 0 5px 40px 0;}
+	.wrapper .main-section .banner .banner-inn .cs-rating:before { top: 4px; left: 77px;}
+	.wrapper .main-section .banner .banner-inn .cs-rating:after {right: 151px; bottom: 35px;}
+	.main-section .event-listing-v2 article, .main-section .event-listing-v2 .post-option {text-align: center;}
+	.main-section .event-listing-v2 .post-option {width: 100%;}
+	.main-section .event-listing-v2 h2 {width: 100%; float: none; display: inline-block;}
+	.main-section .event.event-listing-v2 .match-result {float: none; display: inline-block; border:none; width: auto; padding:0;}
+	.wrapper .main-section .featured-event .cs-rating {padding: 0 30px;}
+	.wrapper .main-section .featured-event .cs-rating ul {margin: 0 5px 45px 0; width: 100%;}
+	.wrapper .main-section .cs-rating:before {top: 3px; bottom: auto; left: 17px;}
+	.wrapper .main-section .cs-rating:after {bottom: 40px; top: auto; right: 17px;}
+	.main-section .event-listing-v2 .event-fixtures .ticket-btn {position: initial; margin: 0;}
+	.main-section .event.event-listing-v2 article .text {width: 100%; padding: 0;}
+	.cons-icon-area {width: 100%; float: left; /*background-color: #222;*/}
+	.main-section .gallery-columns-4 .gallery-item {width:50%;}
+}
+@media (max-width: 580px) {
+	.header .navigation ul .sub-dropdown ul { left: 50%; top: 30px;}
+
+	.main-section .featured-event .cs-sc-team img {width: 180px;}
+	.main-section .small-featured .cs-sc-team ul li figure img {float: none; display: inline-block;}
+	.main-section .small-featured .cs-sc-team ul li figure figcaption {float: none; display: inline-block;}
+	.event.event-results article .text{width: 60%;} 
+	.event.event-results .match-result, .event.event-results article .calendar-date {width: 20%;}
+	.wrapper .main-section .banner .banner-inn .cs-rating:after {right: 31px; bottom: 35px;}
+	.main-section .frtabel-cell {width: 100%; float:left;}
+}
+/*============ Media 300Px Star ============ */
+@media (max-width: 480px) {
+	
+	/* header */
+	.header  .navbar-nav {width: 290px;}
+	.header .navigation ul .sub-dropdown ul {top: 70; left: 20px;} 
+	.logo-section {text-align: center;}
+	.wrapper .header .left-side, .logo-section .logo, .header .logo-section p { float:none !important; display: inline-block;}
+	.logo-section .left-side{ text-align:center; width:100%;}
+	.logo-section .left-side .logo-section .logo{ float:none;}
+	 header .logo-section .right-side .socialmedia{ display: inline-block; float: none; padding: 20px 0 0;}
+	 header .logo-section .right-side{ display: inline-block; text-align: center;}
+	.breadcrumb-sec .absolute-sec .pageinfo span{ width:100%}
+	.header .logo-section {padding: 15px 0 5px;}
+	.header .logo-section p {padding: 10px 0 0 0;}
+
+
+
+	.main-section .featured-event .cs-sc-team img {width: 115px;}
+	.main-section .event article.event-fixtures .text, .event.event-results article .text, .event.event-results .match-result, .event.event-results 	article .calendar-date {width: 100%;}
+	.event.event-results article .text {text-align: center;}
+	.event.event-results article .text ul li {text-align: center; width: 100%;}
+	.event.event-results article .text  {padding: 0 0 0 15px;}
+	.event.event-results article {padding: 0 0 15px 0;}
+	.main-section .event .calendar-date, .event .match-result {width: 20%;}
+	.main-section .event article .text {width: 60%; padding: 25px 5px 20px 0;}
+	.wrapper .main-section .page-content .featured-event .cs-rating {padding: 0 15px;}
+	.wrapper .main-section .featured-event .cs-rating ul {margin: 0 5px 45px 0; width: 100%;}
+	.wrapper .main-section .page-content .featured-event .cs-rating ul li {margin: 0; width: 81px;}
+	.wrapper .main-section .cs-rating:before {top: 3px; bottom: auto; left: 2px;}
+	.wrapper .main-section .cs-rating:after {bottom: 40px; top: auto; right: 2px;}
+	.main-section .event.event-results article .text {width: 100%;}
+	.event-results .event-fixtures .ticket-btn {right: 50%; top: 100%; margin: -50px -60px 0 0;}
+	.event.event-results article.event-fixtures {padding: 0 0 35px;}
+	.main-section .featured-event {padding: 60px 15px 0;}
+	.main-section .featured-event {padding: 20px 15px 0;}
+	.banner .featured-event {margin: 0;}
+	.banner .banner-inn {padding-top: 0;}
+	.main-section .banner .banner-inn .cs-rating {padding: 0 15px; margin-bottom: 0;}
+	.main-section .banner .banner-inn .cs-rating span.win {top: -25px;}
+	.wrapper .main-section .banner .banner-inn .cs-rating:before {left: 2px; top: 5px;}
+	.wrapper .main-section .banner .banner-inn .cs-rating:after {right: 3px; bottom: 35px;}
+	.wrapper .main-section .banner .banner-inn .cs-rating ul li {width: 90px; margin: 0;}
+	.banner-inn .bottom-event-panel {width: 97%;}
+	.header .top-bar .left-side p {float: none; display: inline-block;}
+	.team-detail figure.detailpost {padding: 0 20px 0 10px;}
+	.main-section .player-info .left-side, .player-info .right-side, .main-section .team-detail .detailpost img, .main-section .player-info .right-side {width: 100%;}
+	.main-section .contant-info.cs-team header h1 {margin: 0 0 15px;}
+	.main-section .event-listing-v2 article {padding:10px 0;}
+}
+
+/*============	Media 940Px Start ============ */
+@media screen and (min-width: 991px) and (max-width: 1054px) {
+	.event.event-listing-v2 article.event-fixtures .text {width: 65%;}
+	.main-section .event.event-listing-v2 .match-result {float: none; display: inline-block; border:none; width: 100%; padding:0;}
+	.main-section .featured-event .cs-sc-team {padding: 0 20px;}
+	.main-section .featured-event.small-featured .cs-sc-team {padding: 0; margin: 0 0 15px;}
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {width: 29%;}
+	.main-section .contant-info.cs-team .cs-seprator {margin-bottom: 10px;}
+	.main-section .player-info .right-side {padding: 20px 20px 10px 27px;} .main-section .player-info .left-side{padding: 15px 20px;}
+		.header  .navbar-nav {display: none; margin: 0;  background-color: #1b1b1b; padding: 5px 30px 0; width: 400px; position: absolute; z-index: 99;}
+	.wrapper .header .main-navbar .navigation .cs-click-menu{ display:block;}
+	.wrapper .header .main-navbar .navigation ul li{ width:100%}
+	.wrapper .header .main-navbar .navigation .navbar-nav > li > a { width:100%; border-bottom: 1px solid rgba(0, 0, 0, 0.8); border-left: none; padding: 10px 15px;}
+	.wrapper .header .main-navbar .navigation .navbar-nav li:last-child a {border-bottom: none;}
+	.header .navigation ul li:last-child a {border-right: none;}
+	.header .navbar-nav .sub-dropdown {display: none; visibility: visible; opacity: 1; position: static; float: left; width: 100%; -webkit-transform: translateX(0px); -moz-transform: translateX(0px); -ms-transform: translateX(0px); -o-transform: translateX(0px); transform: translateX(0px); padding-bottom: 0;}
+}

@@ -1,0 +1,24 @@
+.cs-color, .cs-colorhover:hover, 
+/* pagination */.post-option li a:hover, /* Filter-nav */ .filter-nav li:hover a, .filter-nav li.active a,
+/* Blog Detail */.prev .left-arrow, .prev-next-post article.next .right-arrow, .prev-next-post article.prev:after,
+/* Copyright */.social-media ul li a:hover, #copyright P a,
+/* Footer Tweets */.footer-tweets ul li .text a{
+	color: #d7233c!important;
+}
+.cs-bgcolor, .cs-bgcolorhover:hover,
+/* cs tags */.cs-tags ul li:hover a, .share-btn, .custom-btn,
+/* Team Detail */.team-detail figure figcaption header .player-no, /* New Class */.cs-qoute .cs-auther-name:before, 
+/* New Class */.cs-tags ul li a:hover, /* New Class */.share-btn{
+	background-color: #d7233c !important;
+}
+
+.cs-borcolor, .cs-borcolorhover:hover {
+	border-color: #4b3854 !important;
+}
+
+
+
+/*=========== THEME COLOR //---*/
+/* cs tags */.cs-tags ul li:hover a, .custom-btn  {
+	color: #fff;
+}

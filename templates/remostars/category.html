@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}{{ category.title }} | Club News | {% endblock %}
+{% load static %}
+{% block container %}
+      
+      <div class="breadcrumb-sec" style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+        <div class="absolute-sec">  
+          <div class="container">
+            <div class="pageinfo page-title-align-left">
+              <h1 style="color:#fff !important">Category: {{ category.title }}</h1>
+            </div>
+          </div> 
+          <!-- Container --> 
+        </div>
+      </div>
+      <div class="clear"></div>
+
+      <!-- Main Content Section -->
+      <main id="main-content">
+        <div class="main-section">
+          <div class="container">
+            <div class="row">						
+					
+              <div class="page-content">
+                <section class="page-section">
+                    <div class="container">
+                      <div class="row">
+                        <div class="section-fullwidth">
+                          <div class="element-size-100">  
+                            {% for news in news_list %}
+                            <div class="col-md-6">
+                              <div class="cs-blog cs-blog-grid">
+                                <div class="cs-media">
+                                  <figure>
+                                    <a href="{{ news.get_absolute_url }}"><img alt="{{ news.caption|default:news.title }}" src="{{ news.image.url }}"></a>
+                                  </figure>
+                                </div>
+                                <section>
+                                  <div class="title">
+                                      <ul class="post-option">
+                                          <li><time>{{ news.created|date:"F j, Y" }}</time></li>
+                                      </ul>
+                                      <h4><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h4>
+                                  </div>
+                                  <div class="blog-text">	                              
+                                    {{ news.excerpt|truncatechars:160 }}
+                                    <br/>
+                                    {% if news.category %}
+                                    <ul class="post-option">
+                                        <li><a href="{{ news.category.get_absolute_url }}" rel="category">{{ news.category }}</a></li>
+                                    </ul>
+                                    {% endif %}
+                                  </div>	
+                                </section>
+                                <div class="cs-seprator">
+                                    <div class="devider1"></div>
+                                </div>
+                              </div>
+                            </div> <!-- end --> 
+                            {% empty %}<p>There are no News for this Category yet.</p>
+                            {% endfor %}  
+                                     
+                            {% include 'remostars/pagination.html' %}
+                          </div>
+                        </div>                               
+                      </div>
+                    </div>
+                  </section>
+                </div>
+
+                {% include 'remostars/sidebar.html' %}
+
+              </div>
+            </div>
+        </div>
+      </main>
+
+{% endblock %}

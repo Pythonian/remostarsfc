@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Youtube Videos | {% endblock %}
+
+{% block container %}
+  <div class="breadcrumb-sec " style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+    <div class="absolute-sec">  
+      <div class="container">
+        <div class="pageinfo page-title-align-left"><h1 style="color:#fff !important">Youtube Videos</h1></div>
+      </div> 
+    </div>
+  </div>
+  <div class="clear"></div>
+  
+  <main id="main-content">
+    <div class="main-section">
+      <section class="page-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cs-section-title"><h2>Youtube Videos</h2></div>
+              <div class="row">
+                {% for video in videos %}
+                <div class="col-md-4">
+                  {{ video.embed_link|safe }}
+                </div>
+                {% endfor %}
+              </div>                 
+            </div>                               
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% load remostars_tags %}
+
+<aside class="page-sidebar sidebar-color">
+
+  {% get_latest_news as latest_news %}
+	<div class="widget element-size-100 recent_blog_widget">
+		<div class="widget-section-title"><h2>Latest News</h2></div>
+	  	<ul class="blog_without_thumb">
+      {% for news in latest_news %}
+	    	<li>
+	    		<i class="fa fa-align-left"></i>
+	    		<a href="{{ news.get_absolute_url }}">{{ news.title }}</a>
+		        <div class="time">{{ news.created|date:"j" }}<br><span>{{ news.created|date:"M" }}</span></div>
+		    </li>
+      {% empty %}<li>There are currently no News item.</li>
+      {% endfor %}
+	  	</ul>
+	</div>
+
+	<div class="widget element-size-100 widget_categories">
+		<div class="widget-section-title"><h2>News Categories</h2></div>
+      {% get_categories as categories %}
+	  	<ul>
+        {% for category in categories %}
+	    	<li class="cat-item"><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+        {% empty %}<li>There are currently no Categories.</li>
+        {% endfor %}
+	    </ul>
+	</div>
+
+  <div class="widget element-size-100 facebok_widget">
+    <div class="widget-section-title"><h2>Facebook</h2></div>
+    <div class="fb-page" data-href="https://www.facebook.com/RemoStarsFc" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RemoStarsFc" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RemoStarsFc">Remo Stars FC</a></blockquote></div>
+  </div>
+
+  <div class="widget element-size-100 widget_result">
+    <div class="widget-section-title"><h2>Latest Results</h2></div>
+    {% get_latest_results as results %}
+    <ul>
+      {% for result in results %}
+      <li>
+        <div class="infotext">
+          <a href="">{{ result.home_team }} v {{ result.away_team }}</a>
+          <time>{{ result.match_date|date:"M j, Y" }} &bull; {{ result.match_time|date:"P" }}</time>
+        </div>
+        <div class="match-result">{{ result.home_team_score }}-{{ result.away_team_score }}</div>
+      </li>
+      {% empty %}<li>There are currently no Result.</li>
+      {% endfor %}
+		</ul>
+  </div>
+
+  <div class="widget element-size-100 widget_result">
+    <div class="widget-section-title"><h2>Upcoming Fixtures</h2></div>
+    {% get_upcoming_fixtures as fixtures %}
+    <ul>
+      {% for fixture in fixtures %}
+      <li>
+        <div class="infotext">
+          <a href="">{{ fixture.home_team }} v {{ fixture.away_team }}</a>
+          <time>{{ fixture.match_date|date:"M j, Y" }} &bull; {{ fixture.match_time|date:"P" }}</time>
+        </div>
+      </li>
+      {% empty %}<li>There are currently no Fixture.</li>
+      {% endfor %}
+  	</ul>
+  </div>
+
+</aside>
+

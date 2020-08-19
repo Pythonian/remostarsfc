@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Match Gallery | {% endblock %}
+
+{% block container %}
+  <div class="breadcrumb-sec " style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+    <div class="absolute-sec">  
+      <div class="container">
+        <div class="pageinfo page-title-align-left"><h1 style="color:#fff !important">Match Gallery</h1></div>
+      </div> 
+    </div>
+  </div>
+  <div class="clear"></div>
+  
+  <main id="main-content">
+    <div class="main-section">
+      <section class="page-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cs-section-title"><h2>Match Gallery</h2></div>
+              <div id="gallery-1" class="gallery gallery-columns-4 gallery-size-cs_media_8">
+                {% for photo in photos %}
+                <dl class="gallery-item">
+                  <dt class="gallery-icon landscape">
+                    <a href="{{ photo.image.url }}" class="gallery-zoom" title="{{ photo.caption }}">
+                    <img src="{{ photo.image.url }}" alt="{{ photo.caption }}"/>
+                    </a>
+                  </dt>
+                </dl>
+                {% endfor %}
+              </div>                 
+            </div>                               
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+{% endblock %}

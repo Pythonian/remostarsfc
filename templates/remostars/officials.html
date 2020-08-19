@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Club Officials | {% endblock %}
+
+{% block container %}
+  
+  <div class="breadcrumb-sec " style="background:url('/static/remostars/img/bg.jpg') center top;min-height:256px!important;padding-top:112px"> 
+    <div class="absolute-sec">  
+      <div class="container">
+        <div class="pageinfo page-title-align-left">
+          <h1 style="color:#fff !important">Club Officials</h1>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="clear"></div>
+  
+  <main id="main-content">
+    <div class="main-section">
+      <div class="container">
+        <div class="row">	
+					<div class="page-content">
+            <section class="page-section">
+              <div class="container">
+                <div class="row">
+                  <div class="section-fullwidth">
+                    <div class="element-size-100">
+                      <div class="main-title col-md-12">
+                        <div class="cs-section-title"><h2>Technical Crew</h2></div>
+                      </div>  
+                      {% for official in officials %}
+                      <div class="col-md-4">
+                        <article class="cs-team">
+                          <figure><img alt="{{ official.name }}" src="{{ official.image.url }}"></figure>
+                          <div class="text">
+                            <header>
+                              <h4>{{ official.name }}</h4>
+                              <h6>{{ official.position }}</h6>
+                            </header>
+                          </div>
+                        </article>
+                      </div>
+                      {% empty %}There are currently no Official with the club.
+                      {% endfor %}
+                    </div>
+                  </div>                   
+                </div>
+              </div>                               
+            </section>
+          </div>
+
+          {% include 'remostars/sidebar.html' %}
+        </div>
+      </div>   
+    </div>
+  </main>
+
+{% endblock %}
